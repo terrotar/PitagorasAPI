@@ -9,6 +9,92 @@
     {% block head %} {% endblock %}
 </head>
 <body>
+
+    <header>
+        <style>
+            /* Default height for small devices */
+            #intro-example {
+              height: 400px;
+            }
+        
+            /* Height for devices larger than 992px */
+            @media (min-width: 992px) {
+              #intro-example {
+                height: 600px;
+              }
+            }
+          </style>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Toggle button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarLeftAlignExample"
+            aria-controls="navbarLeftAlignExample"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+      
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">PitagorasAPI</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/calculadora">Calculadora</a>
+              </li>
+              <!-- Navbar dropdown -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="dropdown01"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Contato</a
+                >
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                  <a
+                    class="dropdown-item"
+                    href="https://www.linkedin.com/in/pedrog48611b13b/"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://github.com/terrotar"
+                    target="_blank"
+                    >GitHub</a
+                  >
+                </div>
+              </li>
+            </ul>
+            <!-- Left links -->
+          </div>
+          <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+
+
+
+
+
+
+      
+    </header>
+
+
     <div class="container">{% block body %} {% endblock %}</div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
