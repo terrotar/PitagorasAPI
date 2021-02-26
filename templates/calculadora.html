@@ -1,37 +1,52 @@
 {% extends 'base.html' %}
 
+
+
 {% block body %}
+    <div class="calculadora">
 
-    <br>
-    <h1>Calculadora do Teorema de Pitágoras</h1>
-    <br>
-    <p>Insira os dois catetos do triângulo equilátero para obter a hipotenusa:</p>
-
-    <form action="/calculadora" method="POST">
-
-        <label action="/calculadora" method='POST'>Cateto01:</label>
-        <input
-                class="form-control-sm"
-                type="number"
-                name="cateto01"
-                id="cateto01"
-                min=1
-              />
-
-              <br>
-              <br>
-
-        <label action="/calculadora" method='POST'>Cateto02:</label>
-        <input
-                class="form-control-sm"
-                type="number"
-                name="cateto02"
-                id="cateto02"
-                min=1
-              />
         <br>
+        <h1>Calculadora do Teorema de Pitágoras</h1>
+        <hr>
+        <p>Insira os dois catetos do triângulo equilátero para obter a hipotenusa:</p>
         <br>
-        <button type="submit" class="btn btn-primary">Calcular !</button>
+
+        <form action="/calculadora" method="POST">
+
+            <label action="/calculadora" method='POST'>Cateto01:</label>
+            <input
+                    class="form-control-sm"
+                    type="number"
+                    name="cateto01"
+                    id="cateto01"
+                    min=1
+                />
+
+                <br>
+                <br>
+
+            <label action="/calculadora" method='POST'>Cateto02:</label>
+            <input
+                    class="form-control-sm"
+                    type="number"
+                    name="cateto02"
+                    id="cateto02"
+                    min=1
+                />
+
+            <br>
+            <br>
+
+            <button type="submit" class="btn btn-primary">Calcular !</button>
 
 
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1>Resultados</h1>
+            <hr>
+
+    </div>
 {% endblock %}
