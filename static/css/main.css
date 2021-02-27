@@ -1,6 +1,5 @@
 
 
-
 .jumbotron {
   position: relative;
   overflow: hidden;
@@ -21,4 +20,5 @@
   z-index: 2;
   position: relative;
 }
+
 
