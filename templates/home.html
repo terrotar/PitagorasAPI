@@ -3,14 +3,13 @@
 
 {% block head %}
 
-
+  <link rel="stylesheet" href="../static/css/home.css"/>
 
 {% endblock %}
 
 
 
 {% block body %}
-
 
 <div class="jumbotron jumbotron-fluid">
 
@@ -24,15 +23,89 @@
   
     <div class="container text-white">
       <h1 class="display-4">PitagorasAPI</h1>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <p class="lead">Uma API que realiza o cálculo do Teorema de Pitágoras, tendo como entrada dois catetos de um triângulo equilátero e retornando como resultado sua hipotenusa.</p>
       <hr class="my-4">
-      <p>Ainda em construção !</p>
+      <p>Viva a hipotenusa !</p>
       <a class="btn btn-primary btn-lg" href="/calculadora" role="button">Calculadora</a>
   
     </div>
     <!-- /.container -->
   </div>
   <!-- /.jumbotron -->
+
+
+
+
+  <div class="container marketing">
+
+
+  <div class="row">
+    <div class="span4">
+      <hr>
+      <img class="rounded" alt="100x100" src="../static/img/rounded_pitagoras.png"
+          data-holder-rendered="true">
+      <h2>Teorema de Pitágoras</h2>
+      <p>Relaciona as medidas dos lados de um triângulo retângulo.
+      Neste tipo de triângulo o quadrado da hipotenusa é igual à soma dos quadrados dos catetos,
+      dando resultado à famosa equação a² = b² + c², onde "a" é a hipotenusa e "b" e "c" os catetos.</p>
+      <p><a class="btn btn-outline-info" href="https://pt.wikipedia.org/wiki/Teorema_de_Pit%C3%A1goras" target="_blank">Mais Detalhes &raquo;</a></p>
+    </div><!-- /.span4 -->
+    <div class="span4">
+    <hr>
+      <img class="rounded" src="../static/img/rounded_books.png">
+      <h2>Autor</h2>
+      <p>Bem vindo ! Sou Pedro M. Guedes e sou estudante de analise e desenvolvimento de sistemas.
+        Estou estudando TI há 1 ano, tendo como foco principalmente o back-end. Não possuo experiência
+        profissional ainda mas tenho alguns projetos pessoais. Interessado ? Basta clicar no botão abaixo =]
+      </p>
+      <p><a class="btn btn-outline-info" href="https://github.com/terrotar" target="_blank">Mais Projetos &raquo;</a></p>
+    </div><!-- /.span4 -->
+  </div><!-- /.row -->
+
+    <hr>
+
+  </div> <!-- /container -->
+
+
+
+  <hr class="featurette-divider">
+
+  <div class="featurette">
+    <img class="featurette-image pull-right" src="../static/img/logo_windows.png">
+    <h2 class="featurette-heading">Calculadora no Windows</h2>
+    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="featurette">
+    <img class="featurette-image pull-left" src="../static/img/logo_linux.png">
+    <h2 class="featurette-heading">Calculadora no Linux</h2>
+    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="featurette">
+    <img class="featurette-image pull-right" src="../static/img/logo_macOS.png">
+    <h2 class="featurette-heading">Calculadora no MacOS</h2>
+    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+  </div>
+
+  <hr class="featurette-divider">
+
+
+</div><!-- /.container -->
+
+
+
+</main>
 
 
 {% endblock %}
