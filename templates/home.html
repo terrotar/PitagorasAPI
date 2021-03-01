@@ -3,7 +3,6 @@
 
 {% block head %}
 
-  <link rel="stylesheet" href="../static/css/home.css"/>
 
 {% endblock %}
 
@@ -11,98 +10,137 @@
 
 {% block body %}
 
-<div class="jumbotron jumbotron-fluid">
+
+
+
+<div class="jumbotron">
 
     <picture >
     <source media="(min-width:800px)" srcset="https://ns.clubmed.com/nmea/2018/B2C/341/RWD/destination/Greece/greece_highlights1.jpg">
-    <img src="https://ns.clubmed.com/nmea/2018/B2C/341/RWD/destination/Greece/greece_highlights1.jpg" alt="Bootstrap 4 jumbotron with Image Tag Background vs CSS background image for SEO" class="jumbotron__background">
+    <img src="https://ns.clubmed.com/nmea/2018/B2C/341/RWD/destination/Greece/greece_highlights1.jpg" class="jumbotron__background" alt="Foto de paisagem da Grécia">
   </picture>
     
   
   
   
     <div class="container text-white">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <h1 class="display-4">PitagorasAPI</h1>
-      <br>
-      <br>
-      <br>
       <br>
       <br>
       <br>
       <p class="lead">Uma API que realiza o cálculo do Teorema de Pitágoras, tendo como entrada dois catetos de um triângulo equilátero e retornando como resultado sua hipotenusa.</p>
       <hr class="my-4">
       <p>Viva a hipotenusa !</p>
-      <a class="btn btn-primary btn-lg" href="/calculadora" role="button">Calculadora</a>
-  
+      <a class="btn btn-outline-primary btn-lg bg-dark" href="/calculadora" role="button">Calculadora</a>
+      <br>
+      <br>
     </div>
     <!-- /.container -->
   </div>
   <!-- /.jumbotron -->
 
-
-
+      <br>
+      <br>
+      <br>
+      <hr>
 
   <div class="container marketing">
 
 
   <div class="row">
-    <div class="span4">
-      <hr>
+    <div class="span4 col-6">
+      <br>
       <img class="rounded" alt="100x100" src="../static/img/rounded_pitagoras.png"
           data-holder-rendered="true">
+          <br>
       <h2>Teorema de Pitágoras</h2>
-      <p>Relaciona as medidas dos lados de um triângulo retângulo.
+      <p class="lh-350">Relaciona as medidas dos lados de um triângulo retângulo.
       Neste tipo de triângulo o quadrado da hipotenusa é igual à soma dos quadrados dos catetos,
-      dando resultado à famosa equação a² = b² + c², onde "a" é a hipotenusa e "b" e "c" os catetos.</p>
-      <p><a class="btn btn-outline-info" href="https://pt.wikipedia.org/wiki/Teorema_de_Pit%C3%A1goras" target="_blank">Mais Detalhes &raquo;</a></p>
+      dando resultado à famosa equação a² = b² + c², onde "a" é a hipotenusa e "b" e "c" os catetos.
+      Quer testar na prática? Só clicar no Mais Detalhes!</p>
+      <p><a class="btn btn-outline-dark btn-lg bg-info" href="https://pt.wikipedia.org/wiki/Teorema_de_Pit%C3%A1goras" target="_blank">Mais Detalhes &raquo;</a></p>
     </div><!-- /.span4 -->
-    <div class="span4">
-    <hr>
+    <div class="span4 col-6">
+    <br>
       <img class="rounded" src="../static/img/rounded_books.png">
+      <br>
       <h2>Autor</h2>
-      <p>Bem vindo ! Sou Pedro M. Guedes e sou estudante de analise e desenvolvimento de sistemas.
+      <p class="lh-350">Bem vindo! Sou Pedro M. Guedes e sou estudante de analise e desenvolvimento de sistemas.
         Estou estudando TI há 1 ano, tendo como foco principalmente o back-end. Não possuo experiência
-        profissional ainda mas tenho alguns projetos pessoais. Interessado ? Basta clicar no botão abaixo =]
+        profissional ainda mas tenho alguns projetos pessoais. Interessado? Basta clicar no botão abaixo =]
       </p>
-      <p><a class="btn btn-outline-info" href="https://github.com/terrotar" target="_blank">Mais Projetos &raquo;</a></p>
+      <p><a class="btn btn-outline-dark btn-lg bg-info" href="https://github.com/terrotar" target="_blank">Mais Projetos &raquo;</a></p>
     </div><!-- /.span4 -->
   </div><!-- /.row -->
 
-    <hr>
+
 
   </div> <!-- /container -->
 
 
 
-  <hr class="featurette-divider">
+  <hr class="featurette-divider col-12">
 
-  <div class="featurette">
-    <img class="featurette-image pull-right" src="../static/img/logo_windows.png">
+
+  <div class="featurette col-10">
+    <img class="featurette-image pull-right float-start" style="margin-right: 10px;" src="../static/img/logo_windows02.png">
     <br>
     <br>
-    <h2 class="featurette-heading">Calculadora no Windows</h2>
-    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    <div class="container">
+      <h2 class="featurette-heading float-start"> Calculadora no Windows</h2>
+      <p class="lead float-start">Segue uma versão disponível para download específico para o sistema operacional Windows.</p>
+    </div>
   </div>
+  <a class="btn btn-outline-primary btn-lg bg-dark" style="margin-left: 305px;" href="#" role="button">Windows</a>
 
-  <hr class="featurette-divider">
 
-  <div class="featurette">
-    <img class="featurette-image pull-left" src="../static/img/logo_linux.png">
+  <hr class="featurette-divider col-10">
+
+  <div class="featurette col-10">
+    <img class="featurette-image pull-left float-end" src="../static/img/logo_linux.png">
     <br>
-    <h2 class="featurette-heading">Calculadora no Linux</h2>
-    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    <div class="container">
+      <h2 class="featurette-heading float-end">Calculadora no Linux</h2>
+      <p class="lead text float-end">Segue uma versão disponível para download específico para o sistema operacional Linux.</p>
+    </div>
   </div>
+  <a class="btn btn-outline-primary btn-lg bg-dark" style="margin-left: 1190px;" href="#" role="button">Linux</a>
 
-  <hr class="featurette-divider">
+  <hr class="featurette-divider col-10">
 
-  <div class="featurette">
-    <img class="featurette-image pull-right" src="../static/img/logo_macOS.png">
+  <div class="featurette col-10">
+    <img class="featurette-image pull-right float-start" src="../static/img/logo_macOS.png">
     <br>
     <h2 class="featurette-heading">Calculadora no MacOS</h2>
-    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    <p class="lead">Segue uma versão disponível para download específico para o sistema operacional MacOS.</p>
+    <a class="btn btn-outline-primary btn-lg bg-dark" href="#" role="button">MacOS</a>
   </div>
 
-  <hr class="featurette-divider">
+  <hr class="featurette-divider col-10">
 
 
 </div><!-- /.container -->
