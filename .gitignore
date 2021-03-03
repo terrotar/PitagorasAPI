@@ -1,5 +1,14 @@
-# Created by https://www.toptal.com/developers/gitignore/api/python,flask,vscode
-# Edit at https://www.toptal.com/developers/gitignore?templates=python,flask,vscode
+
+# Created by https://www.toptal.com/developers/gitignore/api/flask,python,vscode,database
+# Edit at https://www.toptal.com/developers/gitignore?templates=flask,python,vscode,database
+
+### Database ###
+*.accdb
+*.db
+*.dbf
+*.mdb
+*.pdb
+*.sqlite3
 
 ### Flask ###
 instance/*
@@ -214,4 +223,4 @@ dmypy.json
 !.vscode/extensions.json
 *.code-workspace
 
-# End of https://www.toptal.com/developers/gitignore/api/python,flask,vscode
+# End of https://www.toptal.com/developers/gitignore/api/flask,python,vscode,database
