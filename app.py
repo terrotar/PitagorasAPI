@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from flask_marshmallow import Marshmallow
 
 
 import math
@@ -28,6 +29,19 @@ class Triangulo(db.Model):
         return round(hipotenusa, 2)
 
 
+"""
+# Marshmallow setup
+# Classes Marshmallow
+class TrianguloSchema(SQLAlchemySchema):
+    class Meta:
+        model = Triangulo
+        load_instance = True
+
+    id = auto_field()
+    cateto01 = auto_field()
+    cateto02 = auto_field()
+"""
+
 # Usado para criacao do Database
 db.create_all()
 
@@ -50,7 +64,7 @@ def calculadora():
             cateto01 = float(request.form['cateto01'])
             cateto02 = float(request.form['cateto02'])
             triangulo = Triangulo(cateto01=cateto01, cateto02=cateto02)
-            db.session.add(triangulo)
+            db.session.add(jsonify(triangulo))
             db.session.commit()
             return render_template('calculadora.html',
                                    triangulos=Triangulo.query.all())
