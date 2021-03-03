@@ -48,13 +48,30 @@
 
             <br>
             <br>
+            {% if error %}
+                <h4>Por favor, insira valores <strong>válidos</strong> de catetos.</h4>
+            {% endif %}
             <br>
             <br>
+
+
+
+
             <h1>Resultados</h1>
             <hr>
+            {% for triangulo in triangulos %}
 
-    </div>
+                <h3>Triângulo {{ triangulo.id }}</h3>
+                <p>A hipotenusa do triângulo equilátero de catetos {{ triangulo.cateto01 }} e {{ triangulo.cateto02 }} é : {{ triangulo.hipotenusa() }}.</p>
+                <hr>
 
-</div>
+                {% endfor %}
+
+
+
+
+            </div>
+        </div>
+
 
 {% endblock %}
