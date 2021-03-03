@@ -5,11 +5,11 @@ from flask_sqlalchemy import SQLAlchemy
 import math
 
 
-# Criaçao do app
+# Criacao do app
 app = Flask("PitagorasAPI")
 
 
-# Implementaçao do Database, Sessao local e modelo de classes
+# Implementacao do Database, Sessao local e modelo de classes
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///sql_Pitagoras/sql_app.db"
 
 
@@ -28,7 +28,7 @@ class Triangulo(db.Model):
         return round(hipotenusa, 2)
 
 
-# Usado para criaçao do Database
+# Usado para criacao do Database
 db.create_all()
 
 
@@ -60,7 +60,7 @@ def calculadora():
                                    error=True)
 
 
-# Routa funçao deletar todos resultados
+# Routa funcao deletar todos resultados
 @app.route('/calculadora/deletar/todos', methods=['GET'])
 def deletar_todos():
     triangulos = Triangulo.query.all()
@@ -71,7 +71,7 @@ def deletar_todos():
                            triangulos=Triangulo.query.all())
 
 
-# Route funçao deletar triangulo especifico
+# Route funcao deletar triangulo especifico
 @app.route('/calculadora/deletar/<int:triangulo_id>', methods=['GET'])
 def deletar_triangulo(triangulo_id):
     triangulo = Triangulo.query.get_or_404(triangulo_id)
