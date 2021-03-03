@@ -7,11 +7,13 @@ OBJETIVOS
 - Construir API utilizando Flask
 
 - Criar interface usando HTML, CSS e Bootstrap
+OK
 
 - Integração com Windows, Linux e MacOS seguindo instruções
 
 - Documente seu código, no próprio script (Você pode seguir algumas práticas
 sugeridas pelo Uncle Bob - Código Limpo)
+OK
 
 ------------------------------------------------------------------------------------------------------------------------
 

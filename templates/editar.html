@@ -3,7 +3,7 @@
 
 
 {% block body %}
-
+<
 <div class="container">
 
     <div class="calculadora" style="margin-top: 50px;">
@@ -14,9 +14,9 @@
         <p>Insira os dois catetos do triângulo equilátero para obter a hipotenusa:</p>
         <br>
 
-        <form action="/calculadora" method="POST">
+        <form action="/calculadora/editar/{{ triangulo_id }}" method="POST">
 
-            <label action="/calculadora" method='POST'>Cateto01:</label>
+            <label for="cateto01" method='POST'>Cateto01:</label>
             <input
                     class="form-control-sm"
                     type="number"
@@ -29,7 +29,7 @@
                 <br>
                 <br>
 
-            <label action="/calculadora" method='POST'>Cateto02:</label>
+            <label for="cateto01" method='POST'>Cateto02:</label>
             <input
                     class="form-control-sm"
                     type="number"
@@ -58,27 +58,7 @@
             <br>
             <hr>
 
-
-
-            <h1><u>Resultados</u></h1>
-            <h4>Apagar todos resultados? <a class="btn btn-outline-dark btn-md bg-danger" href="/calculadora/deletar/todos" role="button">Sim</a></h4>
-            <hr>
-            {% for triangulo in triangulos %}
-
-                <h3>Triângulo {{ triangulo.id }}</h3>
-                <p>A hipotenusa do triângulo equilátero de catetos {{ triangulo.cateto01 }} e {{ triangulo.cateto02 }} é : {{ triangulo.hipotenusa() }}.</p>
-                <br>
-                <p>Alterar dados? <a class="btn btn-outline-dark btn-sm bg-info" href="/calculadora/editar/{{ triangulo.id }}" role="button">Sim</a></p>
-                <p>Deletar resultado? <a class="btn btn-outline-dark btn-sm bg-warning" href="/calculadora/deletar/{{ triangulo.id }}" role="button">Sim</a></p>
-                <hr>
-
-                {% endfor %}
-
-
-
-
             </div>
         </div>
-
-
+>
 {% endblock %}

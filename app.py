@@ -5,11 +5,11 @@ from flask_sqlalchemy import SQLAlchemy
 import math
 
 
-# Criação do app
+# Criaçao do app
 app = Flask("PitagorasAPI")
 
 
-# Implementação do Database, Sessão local e modelo de classes
+# Implementaçao do Database, Sessao local e modelo de classes
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///sql_Pitagoras/sql_app.db"
 
 
@@ -28,17 +28,18 @@ class Triangulo(db.Model):
         return round(hipotenusa, 2)
 
 
-# Usado para criação do Database
+# Usado para criaçao do Database
 db.create_all()
 
 
 # Endpoints
-# Route da Home Page
+# Route Home Page
 @app.route('/', methods=['GET'])
 def home():
     return render_template('home.html')
 
 
+# Route Calculadora
 @app.route('/calculadora', methods=['GET', 'POST'])
 def calculadora():
     if(request.method == 'GET'):
@@ -57,6 +58,42 @@ def calculadora():
             return render_template('calculadora.html',
                                    triangulos=Triangulo.query.all(),
                                    error=True)
+
+
+# Routa funçao deletar todos resultados
+@app.route('/calculadora/deletar/todos', methods=['GET'])
+def deletar_todos():
+    triangulos = Triangulo.query.all()
+    for triangulo in triangulos:
+        db.session.delete(triangulo)
+        db.session.commit()
+    return render_template('calculadora.html',
+                           triangulos=Triangulo.query.all())
+
+
+# Route funçao deletar triangulo especifico
+@app.route('/calculadora/deletar/<int:triangulo_id>', methods=['GET'])
+def deletar_triangulo(triangulo_id):
+    triangulo = Triangulo.query.get_or_404(triangulo_id)
+    db.session.delete(triangulo)
+    db.session.commit()
+    return render_template('calculadora.html',
+                           triangulos=Triangulo.query.all())
+
+
+# Route funcao editar triangulo especifico
+@app.route('/calculadora/editar/<int:triangulo_id>', methods=['GET', 'POST'])
+def editar_triangulo(triangulo_id):
+    if(request.method == 'GET'):
+        return render_template('editar.html',
+                               triangulo_id=triangulo_id)
+    else:
+        triangulo = Triangulo.query.get_or_404(triangulo_id)
+        triangulo.cateto01 = float(request.form['cateto01'])
+        triangulo.cateto02 = float(request.form['cateto02'])
+        db.session.commit()
+        return render_template('calculadora.html',
+                               triangulos=Triangulo.query.all())
 
 
 if __name__ == "__main__":
