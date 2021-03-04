@@ -26,7 +26,8 @@ class Triangulo(db.Model):
     hipotenusa = db.Column(db.Float, nullable=False)
 
     def hipotenusa(self):
-        hipotenusa = round(math.hypot(float(self.cateto01), float(self.cateto02)), 2)
+        hipotenusa = math.hypot(float(self.cateto01), float(self.cateto02))
+        hipotenusa = round(hipotenusa, 2)
         self.hipotenusa = hipotenusa
         return self.hipotenusa
 
@@ -115,6 +116,18 @@ def editar_triangulo(triangulo_id):
         db.session.commit()
         return render_template('calculadora.html',
                                triangulos=Triangulo.query.all())
+
+
+# Rota resultados formato JSON
+@app.route('/calculadora/json', methods=['GET'])
+def get_json():
+    triangulos = Triangulo.query.all()
+    for triangulo in triangulos:
+        hipotenusa = int(triangulo.hipotenusa())
+        triangulo.hipotenusa = hipotenusa
+    db.session.commit()
+    resultados = triangulos_schema.dump(triangulos)
+    return jsonify(resultados)
 
 
 if __name__ == "__main__":
