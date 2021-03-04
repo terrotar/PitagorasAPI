@@ -5,11 +5,13 @@ OBJETIVOS
 
 
 - Construir API utilizando Flask
+OK
 
 - Criar interface usando HTML, CSS e Bootstrap
 OK
 
 - Integração com Windows, Linux e MacOS seguindo instruções
+---
 
 - Documente seu código, no próprio script (Você pode seguir algumas práticas
 sugeridas pelo Uncle Bob - Código Limpo)
@@ -31,12 +33,16 @@ ETAPAS
 ************************************************************************************************************************
 
 1) Criar uma API utilizando Flask(pytest)
+OK
 
 2) Integrar API com HTML
+OK
 
 3) Estilizar API com CSS e Bootstrap
+OK
 
 4) Integração com SO
+---
 
 5) Revisar tudo
 
