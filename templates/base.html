@@ -10,11 +10,11 @@
     {% block head %} {% endblock %}
 </head>
 <body>
-
+<!--background-color: rgba(128, 128, 128, 0.171);-->
   <style>
 
     body {
-      background-color: rgba(128, 128, 128, 0.171);
+      background-color: rgba(38, 107, 255, 0.253);
     }
 
   </style>
@@ -23,7 +23,8 @@
 
     <header>
 
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light"
+    style="background-color: rgba(0, 225, 255, 0.883);">
         <!-- Container wrapper -->
         <div class="container-fluid">
           <!-- Toggle button -->
@@ -44,21 +45,24 @@
             <!-- Left links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">PitagorasAPI</a>
+                <a class="nav-link active" aria-current="page" href="/"><strong>PitagorasAPI</strong></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/calculadora">Calculadora</a>
+                <a class="nav-link active"
+                   style="margin-left: 20px;"
+                   href="/calculadora"><strong>Calculadora</strong></a>
               </li>
               <!-- Navbar dropdown -->
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown"
+                  style="margin-left: 590px;">
                 <a
-                  class="nav-link dropdown-toggle"
+                  class="nav-link dropdown-toggle fs-5"
                   href="#"
                   id="dropdown01"
                   data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
-                  >Contato</a
+                  ><strong>Contato</strong></a
                 >
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                   <a

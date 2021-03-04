@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
-import json
 
 import math
 
