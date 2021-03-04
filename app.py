@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, jsonify, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
@@ -23,27 +23,31 @@ class Triangulo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     cateto01 = db.Column(db.Float, nullable=False)
     cateto02 = db.Column(db.Float, nullable=False)
+    hipotenusa = db.Column(db.Float, nullable=False)
 
     def hipotenusa(self):
-        hipotenusa = math.hypot(float(self.cateto01), float(self.cateto02))
-        return round(hipotenusa, 2)
+        hipotenusa = round(math.hypot(float(self.cateto01), float(self.cateto02)), 2)
+        self.hipotenusa = hipotenusa
+        return self.hipotenusa
 
-
-"""
-# Marshmallow setup
-# Classes Marshmallow
-class TrianguloSchema(SQLAlchemySchema):
-    class Meta:
-        model = Triangulo
-        load_instance = True
-
-    id = auto_field()
-    cateto01 = auto_field()
-    cateto02 = auto_field()
-"""
 
 # Usado para criacao do Database
 db.create_all()
+
+
+# Marshmallow setup
+# Criação do Marshmallow
+ma = Marshmallow(app)
+
+
+# Classes Marshmallow
+class TrianguloSchema(ma.Schema):
+    class Meta:
+        fields = ("id", "cateto01", "cateto02", "hipotenusa")
+
+
+triangulo_schema = TrianguloSchema()
+triangulos_schema = TrianguloSchema(many=True)
 
 
 # Endpoints
@@ -57,14 +61,17 @@ def home():
 @app.route('/calculadora', methods=['GET', 'POST'])
 def calculadora():
     if(request.method == 'GET'):
+        triangulos = Triangulo.query.all()
+        api_triangulos = triangulos_schema.dump(triangulos)
         return render_template('calculadora.html',
-                               triangulos=Triangulo.query.all())
+                               triangulos=api_triangulos)
     else:
         if(request.form['cateto01'] and request.form['cateto02']):
             cateto01 = float(request.form['cateto01'])
             cateto02 = float(request.form['cateto02'])
-            triangulo = Triangulo(cateto01=cateto01, cateto02=cateto02)
-            db.session.add(jsonify(triangulo))
+            triangulo = Triangulo(cateto01=cateto01,
+                                  cateto02=cateto02)
+            db.session.add(triangulo)
             db.session.commit()
             return render_template('calculadora.html',
                                    triangulos=Triangulo.query.all())
