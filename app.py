@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
-
+import json
 
 import math
 
@@ -123,11 +123,12 @@ def editar_triangulo(triangulo_id):
 def get_json():
     triangulos = Triangulo.query.all()
     for triangulo in triangulos:
-        hipotenusa = int(triangulo.hipotenusa())
+        hipotenusa = float(triangulo.hipotenusa())
         triangulo.hipotenusa = hipotenusa
     db.session.commit()
     resultados = triangulos_schema.dump(triangulos)
-    return jsonify(resultados)
+    triangulo = triangulo_schema.dump(triangulos)
+    return(jsonify(resultados))
 
 
 if __name__ == "__main__":
